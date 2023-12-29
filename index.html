@@ -8,10 +8,13 @@
 </head>
 <body>
     <div class="control-panel">
-        <label for="box-input">Enter a Color:</label> <br> <br>
-        <input type="color" name="box-input" id="box-input"> <br><br>
-        <button class="make-btn">Make Box</button> <br> <br>
+        <label for="box-input">Enter a Color:</label> 
+        <input type="color" name="box-input" id="box-input"> 
+        <div class="btn-container">
+        <button class="make-btn">Make Box</button> 
         <button class="delete-btn">Delete</button>
+        <button class="edit-btn" disabled>Edit</button>
+    </div>
     </div>
     <div class="play-area" data-select="grab"></div>
     <script src="script.js"></script>
