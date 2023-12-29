@@ -21,9 +21,13 @@ body{
 .control-panel{
     border: 5px solid black;
     width: 300px;
-    height: 250px;
+    /* height: 250px; */
     border-radius: 5px;
     padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
 }
 
 .play-area{
@@ -36,14 +40,21 @@ body{
     grid-template-rows: repeat(8, 50px);
 }
 
+.btn-container{
+    display: flex;
+    gap: 5px;
+}
+
+
 .control-panel label{
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-#box-input, .make-btn, .delete-btn{
+#box-input, button{
     font-size: 1.1rem;
     cursor: pointer;
+    padding: 0 auto;
 }
 
 @keyframes box-animation {
