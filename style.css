@@ -6,9 +6,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font-1);
 }
 
-body{
+.app{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +22,6 @@ body{
 .control-panel{
     border: 5px solid black;
     width: 300px;
-    /* height: 250px; */
     border-radius: 5px;
     padding: 1.25rem;
     display: flex;
@@ -42,6 +42,8 @@ body{
 
 .btn-container{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 5px;
 }
 
@@ -57,17 +59,12 @@ body{
     padding: 0 auto;
 }
 
-@keyframes box-animation {
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
+.preview-btn a, .preview-btn a:visited{
+    text-decoration: none;
+    color: black;
 }
 
 .box-animate{
-    animation: box-animation .3s ease-in;
     border: .5px solid rgba(0, 0, 0, 0.5);
 }
 
@@ -76,6 +73,17 @@ body{
     cursor: grab;
 }
 
-/* .delete-animate span{
-    animation: box-animation .3s ease-in reverse;
-} */
+.no-border{
+    border: none;
+}
+
+.preview{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
