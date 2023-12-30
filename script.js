@@ -1,14 +1,19 @@
 // *Variables
+const app = document.querySelector('.app')
 const boxInput = document.querySelector("#box-input")
-const makeBtn = document.querySelector(".make-btn")
 const playArea = document.querySelector(".play-area")
+const resetBtn = document.querySelector(".reset-btn")
 const deleteBtn = document.querySelector(".delete-btn")
 const editBtn = document.querySelector('.edit-btn')
 const highlightedBoxes = document.getElementsByClassName('box-highlight')
+const boxes = document.getElementsByClassName('box-animate')
+const preview = document.querySelector('.preview')
+const previewBtn = document.querySelector('.preview-btn')
+const imageArea = document.querySelector('.image-area')
+const backBtn = document.querySelector('.back-btn')
 
 // *Functions
 function makeBox(color){
-    if (playArea.childElementCount === 72) return
     box = document.createElement('span')
     box.style.backgroundColor = color
     box.classList.add('box-animate')
@@ -17,30 +22,56 @@ function makeBox(color){
 } 
 
 function highlightBox(box){
-    box.addEventListener('click', () => {
-    box.classList.toggle('box-highlight')
-    if (highlightedBoxes.length) editBtn.disabled = false
-    else editBtn.disabled = true
-}) 
+        box.addEventListener('click', () => {
+        box.classList.toggle('box-highlight')
+    }) 
 }
 
-// TODO Add more Utility
 function editBox(color){
         [...highlightedBoxes].forEach(highlightedBox => {
             highlightedBox.style.backgroundColor = color
             highlightedBox.classList.remove('box-highlight')
         });
-        editBtn.disabled = true
 }
-function deleteBox(){}
+function deleteBox(){
+    [...highlightedBoxes].forEach(highlightedBox =>{
+        highlightedBox.style.backgroundColor = 'white'
+        highlightedBox.classList.remove('box-highlight')
+    })
+}
 
-function deleteBoxes(){
-    playArea.innerHTML = ''
+function resetBoxes(){
+    for (let i = 0; i < 72; i++){
+        makeBox('white')
+    }
+}
+function removeBorder(){
+    [...boxes].forEach(box =>{
+        box.classList.add('no-border')
+    })
+}
+
+function addBorder(){
+    [...boxes].forEach(box => {
+        box.classList.remove('no-border')
+    })
 }
 
 // *Event Handlers
-makeBtn.addEventListener('click', () => {makeBox(boxInput.value)})
-deleteBtn.addEventListener('click', () => {deleteBoxes()})
-editBtn.addEventListener('click', () => {editBox(boxInput.value)})
+resetBoxes()
+resetBtn.addEventListener('click', () => {
+    playArea.innerHTML = ''
+    resetBoxes()
+})
 
+
+backBtn.addEventListener('click', () => {
+    preview.style.display = 'none'
+    app.style.display = 'flex' 
+    playArea.style.border = '5px solid black'
+    addBorder()
+})
+
+editBtn.addEventListener('click', () => {editBox(boxInput.value)})
+deleteBtn.addEventListener('click', () => {deleteBox()})
 
