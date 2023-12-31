@@ -21,9 +21,8 @@
 
 .control-panel{
     border: 5px solid black;
-    width: 300px;
     border-radius: 5px;
-    padding: 1.25rem;
+    padding: 1.25rem .5rem;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -32,8 +31,6 @@
 
 .play-area{
     border: 5px solid black;
-    width: 410px;
-    height: 410px;
     border-radius: 5px;
     display: grid;
     grid-template-columns: repeat(8, 50px);
