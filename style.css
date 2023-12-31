@@ -29,12 +29,12 @@
     align-items: center;
 }
 
-.play-area{
+[data-pixels]{
     border: 5px solid black;
     border-radius: 5px;
     display: grid;
-    grid-template-columns: repeat(8, 50px);
-    grid-template-rows: repeat(8, 50px);
+    grid-template-columns: repeat(12, 33.3333px);
+    grid-template-rows: repeat(12, 33.3333px);
 }
 
 .btn-container{
@@ -56,18 +56,13 @@
     padding: 0 auto;
 }
 
-.preview-btn a, .preview-btn a:visited{
-    text-decoration: none;
-    color: black;
-}
-
 .box-animate{
     border: .5px solid rgba(0, 0, 0, 0.5);
 }
 
 .box-highlight{
     border: .5px solid rgba(0, 255,255, 0.5);
-    cursor: grab;
+    cursor: crosshair;
 }
 
 .no-border{
