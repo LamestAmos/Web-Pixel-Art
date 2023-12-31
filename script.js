@@ -11,6 +11,7 @@ const preview = document.querySelector('.preview')
 const previewBtn = document.querySelector('.preview-btn')
 const imageArea = document.querySelector('.image-area')
 const backBtn = document.querySelector('.back-btn')
+const pixels = playArea.dataset.pixels
 
 // *Functions
 function makeBox(color){
@@ -41,7 +42,7 @@ function deleteBox(){
 }
 
 function resetBoxes(){
-    for (let i = 0; i < 72; i++){
+    for (let i = 0; i < pixels; i++){
         makeBox('white')
     }
 }
