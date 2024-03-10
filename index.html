@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pixel Artist</title>
+</head>
+<body>
+    <div class="app">
+    <div class="control-panel">
+        <label for="box-input">Enter a Color:</label> 
+        <input type="color" name="box-input" id="box-input"> 
+        <div class="btn-container"> 
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+        <button class="reset-btn">Reset</button>
+        <button class="preview-btn">Save As Image</button>
+    </div>
+    </div>
+    <div class="play-area" data-select="crosshair" data-pixels="144"></div>
+</div>
+    <div class="preview">
+        <h1>Preview</h1>
+        <h5>Right Click on the image to Save</h5>
+        <div class="image-area"></div>
+        <div class="btn-container">
+            <button class="back-btn">Go Back</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="imagescript.js"></script>
+</body>
+</html>
