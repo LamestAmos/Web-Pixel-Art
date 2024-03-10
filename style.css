@@ -1,0 +1,81 @@
+:root{
+    --font-1: sans-serif;
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-1);
+}
+
+.app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: .75rem;
+    font-family: var(--font-1);
+}
+
+.control-panel{
+    border: 5px solid black;
+    border-radius: 5px;
+    padding: 1.25rem .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+[data-pixels]{
+    border: 5px solid black;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(12, 33.3333px);
+    grid-template-rows: repeat(12, 33.3333px);
+}
+
+.btn-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+
+.control-panel label{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#box-input, button{
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0 auto;
+}
+
+.box-animate{
+    border: .5px solid rgba(0, 0, 0, 0.5);
+}
+
+.box-highlight{
+    border: .5px solid rgba(0, 255,255, 0.5);
+    cursor: crosshair;
+}
+
+.no-border{
+    border: none;
+}
+
+.preview{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
